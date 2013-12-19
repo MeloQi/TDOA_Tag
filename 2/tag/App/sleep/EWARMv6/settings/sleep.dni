@@ -1,0 +1,159 @@
+[DebugChecksum]
+Checksum=2044244837
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=72000000
+ClockAutoDetect=0
+ClockWanted=2000000
+JtagSpeed=2000000
+Prescaler=36
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[JLinkDriver]
+WatchCond=_ 0
+Watch0=_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0
+Watch1=_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0
+
+
+
+
+
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[struct_types]
+Fmt0=Locat_Info-direction	3	0
+Fmt1=Locat_Info-flag	3	0
+Fmt2=Locat_Info-state	3	0
+Fmt3=StartUp_Info-isfist_on	4	0
+Fmt4=struct startup_info-isfist_on	4	0
+[array_types]
+Fmt0=uint16_t[20]	4	0
+Fmt1=uint16_t[2]	4	0
+[watch_formats]
+Fmt0={W}0:Factory_Date	4	0
+Fmt1={W}0:RAMFlag1	4	0
+Fmt2={W}0:RAMFlag2	4	0
+Fmt3={W}0:RF_Power	3	0
+Fmt4={W}0:Recieve_Channel	3	0
+Fmt5={W}0:Send_Channel	3	0
+Fmt6={W}0:button_test	1	0
+Fmt7={W}0:data_buff[3]	1	0
+Fmt8={W}0:read_poweron_cnt	4	0
+Fmt9={W}0:read_startinfo->isfist_on	4	0
+Fmt10={W}0:sleepDuration	4	0
+Fmt11={W}0:sui->isfist_on	4	0
+Fmt12={W}0:temp	4	0
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title0=I0
+Setup0=0 1 0 500 2 0 4 0 0
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+Title0=ITM1
+Setup0=1 1 1 1
+Title1=ITM2
+Setup1=1 1 1 1
+Title2=ITM3
+Setup2=1 1 1 1
+Title3=ITM4
+Setup3=1 1 1 1
+SumSortOrder=0
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Trace2]
+Enabled=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 0 "EMUL_DATA" "BUTTON_DELY" 0 0 0 0 4294967295
+Bp1=_ 0 "EMUL_CODE" "{C:\Documents and Settings\Administrator}.292.2" 0 0 1 "" 0 "" 0
+Count=2
+[Aliases]
+A0=_ "C:\Documents and Settings\Administrator\桌面\KJ128A-K5程序\KJ128A-K5程序\hal\micro\cortexm3\sleep.c" ""
+A1=_ "C:\Documents and Settings\Administrator\桌面\TDOA嵌入式未完成功能实现方案\标识卡_PA版_code\标识卡\App\sleep\src\App.c" ""
+A2=_ "G:\STMicroelectronics\LowPower\TRX\hal\micro\cortexm3\nvm.c" ""
+Count=3
+SuppressDialog=1
