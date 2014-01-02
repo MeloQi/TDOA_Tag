@@ -250,6 +250,10 @@ void Sleep_Process(void)        //
 	if(rang_ok){                                                                                                        //测距成功
 		rang_false_cnt = 0;
 		rang_ok = 0;
+		pre_dist.dist = cur_dist.dist;													
+		pre_dist.dest[4]= cur_dist.dest[4];
+  		pre_dist.dest[5]= cur_dist.dest[5];
+		pre_dist.time = cur_dist.time;
 																					//测距成功,比较上次测距差值决定休眠时间/////
 		if(old_dist.dist>cur_dist.dist){temp = old_dist.dist-cur_dist.dist;}else{temp = cur_dist.dist-old_dist.dist;}     //计算当前距离与历史距离差值 
 		if((temp<=DIFF_D)&&(cur_dist.dest[5]==old_dist.dest[5])&&(cur_dist.dest[4]==old_dist.dest[4])){                   //判断差值决定是否进行中等长度休眠还是标准休眠
@@ -276,10 +280,6 @@ app_sleep_end:
   		old_dist.dest[5]= cur_dist.dest[5];
 		old_dist.time = cur_dist.time;
 
-		pre_dist.dist = cur_dist.dist;													
-		pre_dist.dest[4]= cur_dist.dest[4];
-  		pre_dist.dest[5]= cur_dist.dest[5];
-		pre_dist.time = cur_dist.time;
 	}
   	sleep_time = 1000;																//固定休眠1s(仅用于测试)
   	set_systime_ms((sleep_time + get_systime_ms()));								//更新系统时间      

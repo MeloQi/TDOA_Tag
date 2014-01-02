@@ -107,7 +107,7 @@ void sort(unsigned short *sort_data,int8u lenght)
 static 	unsigned short 	dist_arry[DIST_ARRY_SIZE] = {0,0,0};					//保存三三过滤值
 static 	unsigned short 	dist_arry1[DIST_ARRY_SIZE] = {0,0,0};					//保存三三过排序值
 static	uint8_t			three_filter_index;										//三三过滤已保存距离个数
-#define	DIST_BIG_FILTER			5												//大值过滤系数
+#define	DIST_BIG_FILTER			1												//大值过滤系数
 #define	DIST_LITTLE_FILTER		2												//小值过滤阀值
 uint8_t	oldD_update_flag;														//是否更新历史距离信息标志
 static uint8_t dist_policy_restart;												//
@@ -227,9 +227,9 @@ static MyByte8T rang_poll(void)
 #ifdef NEED_LOCATION																	
 		  	if(!Location.state) goto rang_ok_end;								//若未定位则不发送测距结果
 #endif
+                if((dist_policy(&distan_value) == 0))	goto rang_ok_end;				//距离过滤及修正					
 
-#ifdef DIRECTION
-			if((dist_policy(&distan_value) == 0))	goto rang_ok_end;				//距离过滤及修正								
+#ifdef DIRECTION					
 			if(Location.direction == 1){										//方向1，距离为奇数
 			  	distan_value = ((distan_value&0xFFFE) + 1);		
 		  	}else if(Location.direction == 0){									//方向0，距离为偶数
